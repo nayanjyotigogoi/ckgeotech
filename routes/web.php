@@ -23,6 +23,10 @@ Route::get('/test', function () {
 });
 
 
+Route::get('/userdashboard', function () {
+    return view('users-Dashboard/dashboard');
+});
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

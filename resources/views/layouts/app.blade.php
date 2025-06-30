@@ -196,7 +196,7 @@
                         <p>&copy; <a href="#">2025 CK GEO TECH</a>, All Right Reserved.</p>
                     </div>
                     <div class="col-md-6">
-                        <p>Developed By <a href="https://www.bhutrix.com/">Anvaya Solution</a></p>
+                        <p>Developed By <a href="https://www.anvayasolution.com">Anvaya Solution</a></p>
                     </div>
                 </div>
             </div>
