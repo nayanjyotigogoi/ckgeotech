@@ -1,0 +1,81 @@
+.container.projects_know_more {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.banner.projects_know_more {
+    text-align: center;
+    background: linear-gradient(to right, #009688, #00796b);
+    color: white;
+    padding: 50px 20px;
+    border-radius: 8px;
+}
+.banner.projects_know_more h1 {
+    margin: 0;
+    font-size: 36px;
+}
+.subtitle.projects_know_more {
+    font-size: 18px;
+    margin-top: 10px;
+}
+.project-content.projects_know_more {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+.project-left.projects_know_more {
+    flex: 1 1 45%;
+}
+.project-left.projects_know_more img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.image-gallery.projects_know_more {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+.image-gallery.projects_know_more img {
+    width: calc(50% - 10px);
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+.project-details.projects_know_more {
+    flex: 1 1 50%;
+}
+.project-details.projects_know_more h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.project-details.projects_know_more p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.project-details.projects_know_more h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+.back-btn.projects_know_more {
+    display: inline-block;
+    margin-top: 30px;
+    color: #00796b;
+    text-decoration: none;
+    font-weight: bold;
+}
+.back-btn.projects_know_more:hover {
+    text-decoration: underline;
+}
+@media screen and (max-width: 768px) {
+    .project-content.projects_know_more {
+        flex-direction: column;
+    }
+    .image-gallery.projects_know_more img {
+        width: 48%;
+    }
+}
