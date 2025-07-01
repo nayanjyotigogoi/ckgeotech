@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
     <div class="wrapper">
         <!-- Page Header Start -->
@@ -16,7 +16,7 @@
             </div>
         </div>
         <!-- Page Header End -->
-         
+
         <!-- About Start -->
         <section class="about wow fadeInUp" data-wow-delay="0.1s">
             <div class="container">

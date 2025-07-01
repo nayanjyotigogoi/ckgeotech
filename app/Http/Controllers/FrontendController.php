@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Project;
-class HomeController extends Controller
+class FrontendController extends Controller
 {
      public function index()
     {

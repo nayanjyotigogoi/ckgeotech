@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\HomeController;
@@ -24,7 +25,7 @@ Route::get('/test', function () {
 
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [FrontendController::class, 'index'])->name('home');
 
 
 Route::get('/About', [AboutController::class, 'index'])->name('about');
@@ -56,7 +57,7 @@ Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.log
 // Admin dashboard route
 Route::get('/admin', [AdminDashboardController::class, 'index'])->name('admin.index');
 
-// Admin About route    
+// Admin About route
 Route::get('/About/view', [AboutController::class, 'show'])->name('admin.about.view');
 Route::get('/About/edit', [AboutController::class, 'edit'])->name('admin.about.edit');
 Route::post('/About/update', [AboutController::class, 'update'])->name('admin.about.update');
