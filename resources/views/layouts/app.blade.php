@@ -29,55 +29,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="footer-link">
-                            <h2>Useful Pages</h2>
-                            <a href="">About Us</a>
-                            <a href="/Contact-us">Contact Us</a>
-                            <!-- <a href="">Our Team</a> -->
-                            <a href="/Projects">Projects</a>
-                            <a href="">Testimonial</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="newsletter">
-                            <h2>Stay Updated</h2>
-                            <p>
-                                Get the latest insights on erosion control solutions, geo-textile innovations, and
-                                project updates.
-                                Subscribe to our newsletter for expert advice and industry news delivered to your inbox.
-                            </p>
-                            <div class="form">
-                                <input class="form-control" placeholder="Email here">
-                                <button class="btn">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container footer-menu">
-                <div class="f-menu">
-                    <a href="">Terms of use</a>
-                    <a href="">Privacy policy</a>
-                    <a href="">Cookies</a>
-                    <a href="">Help</a>
-                    <a href="">FQAs</a>
-                </div>
-            </div>
-            <div class="container copyright">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>&copy; <a href="#">2025 CK GEO TECH</a>, All Right Reserved.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p>Developed By <a href="https://www.anvayasolution.com">Anvaya Solution</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav me-auto">
 
                     </ul>
 

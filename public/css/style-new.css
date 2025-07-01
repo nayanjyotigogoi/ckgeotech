@@ -9,10 +9,10 @@ body {
 }
 
 h1,
-h2,
-h3,
+h2, 
+h3, 
 h4,
-h5,
+h5, 
 h6 {
     color: #030f27;
 }
@@ -90,7 +90,7 @@ a:focus {
 .top-bar {
     position: relative;
     height: 90px;
-
+ 
     background: #fdbe33;
 }
 
@@ -227,19 +227,19 @@ a:focus {
     .nav-bar {
         padding: 0 75px;
     }
-
+    
     .nav-bar.nav-sticky {
         padding: 0;
     }
-
+    
     .nav-bar .navbar {
         padding: 20px;
     }
-
+    
     .nav-bar .navbar-brand {
         display: none;
     }
-
+    
     .nav-bar a.nav-link {
         padding: 8px 15px;
         font-size: 15px;
@@ -251,15 +251,15 @@ a:focus {
     .nav-bar .navbar {
         padding: 15px;
     }
-
+    
     .nav-bar a.nav-link {
         padding: 5px;
     }
-
+    
     .nav-bar .dropdown-menu {
         box-shadow: none;
     }
-
+    
     .nav-bar .btn {
         display: none;
     }
