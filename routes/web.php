@@ -47,6 +47,11 @@ Route::get('/Contact-us', function () {
 });
 
 
+Route::get('/userdashboard', function () {
+    return view('users-Dashboard/dashboard');
+});
+
+
 //admin login routes
 // Admin login/logout routes
 Route::get('admin/login', [AdminController::class, 'showLogin'])->name('admin.login');

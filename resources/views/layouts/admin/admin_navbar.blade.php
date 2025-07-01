@@ -63,15 +63,15 @@
             </li>
 
             <li>
-              <form action="{{route('admin.logout')}}" method="post">
-                @csrf
-                <input type="hidden" name="_method" value="POST">
-                <button type="submit" class="dropdown-item d-flex align-items-center">
-                  <i class="bi bi-box-arrow-right"></i>
-                  <span>Sign Out</span>
-                </button>
+             <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
 
-              </form>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
               <!-- <a class="dropdown-item d-flex align-items-center" href="#">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>

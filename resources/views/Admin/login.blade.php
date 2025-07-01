@@ -131,11 +131,11 @@
             </ul>
         </div>
     @endif -->
-    
+
         <h1>Log In</h1>
         <p class="signup-text">You don't have a password? Please Contact Your Admin.</p>
-        
-        <form action="" method="post" class="login-form" id="loginForm">
+
+        <form action="{{route('login')}}" method="post" class="login-form" id="loginForm">
             @csrf
             <div class="form-group">
                 <input type="email" name="email" id="email" placeholder="Email" required>
@@ -158,29 +158,29 @@
     <script>
         // document.getElementById('loginForm').addEventListener('submit', function(e) {
         //     e.preventDefault();
-            
+
         //     const email = document.getElementById('email');
         //     const password = document.getElementById('password');
         //     const emailError = document.getElementById('emailError');
         //     const passwordError = document.getElementById('passwordError');
-            
+
         //     // Reset errors
         //     emailError.style.display = 'none';
         //     passwordError.style.display = 'none';
-            
+
         //     // Validate email
         //     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         //     if (!emailPattern.test(email.value)) {
         //         emailError.style.display = 'block';
         //         return;
         //     }
-            
+
         //     // Validate password
         //     if (password.value.length < 6) {
         //         passwordError.style.display = 'block';
         //         return;
         //     }
-            
+
         //     // If validation passes, you can submit the form to your backend
         //     console.log('Form submitted:', {
         //         email: email.value,
