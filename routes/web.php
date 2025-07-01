@@ -77,3 +77,8 @@ Route::post('/projects/store', [ProjectsController::class, 'store'])->name('admi
 Route::get('/projects/edit/{id}', [ProjectsController::class, 'edit'])->name('admin.project.edit');
 Route::post('/projects/update/{id}', [ProjectsController::class, 'update'])->name('admin.project.update');
 Route::delete('/projects/delete/{id}', [ProjectsController::class, 'destroy'])->name('admin.project.delete');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
