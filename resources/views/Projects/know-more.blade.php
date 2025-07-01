@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
     <div class="wrapper">
 
@@ -20,8 +20,8 @@
 
         <!-- Know More About the Project Start -->
         <section class="projects_know_more">
-            <div class="container projects_know_more">         
-                  
+            <div class="container projects_know_more">
+
 
                 <div class="project-content projects_know_more">
                     <div class="project-left projects_know_more">

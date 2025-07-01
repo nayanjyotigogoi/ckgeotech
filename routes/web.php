@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\HomeController;
@@ -28,7 +29,7 @@ Route::get('/userdashboard', function () {
 });
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [FrontendController::class, 'index'])->name('home');
 
 
 Route::get('/About', [AboutController::class, 'index'])->name('about');
@@ -50,6 +51,11 @@ Route::get('/Contact-us', function () {
 });
 
 
+Route::get('/userdashboard', function () {
+    return view('users-Dashboard/dashboard');
+});
+
+
 //admin login routes
 // Admin login/logout routes
 Route::get('admin/login', [AdminController::class, 'showLogin'])->name('admin.login');
@@ -60,7 +66,7 @@ Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.log
 // Admin dashboard route
 Route::get('/admin', [AdminDashboardController::class, 'index'])->name('admin.index');
 
-// Admin About route    
+// Admin About route
 Route::get('/About/view', [AboutController::class, 'show'])->name('admin.about.view');
 Route::get('/About/edit', [AboutController::class, 'edit'])->name('admin.about.edit');
 Route::post('/About/update', [AboutController::class, 'update'])->name('admin.about.update');
@@ -80,3 +86,8 @@ Route::post('/projects/store', [ProjectsController::class, 'store'])->name('admi
 Route::get('/projects/edit/{id}', [ProjectsController::class, 'edit'])->name('admin.project.edit');
 Route::post('/projects/update/{id}', [ProjectsController::class, 'update'])->name('admin.project.update');
 Route::delete('/projects/delete/{id}', [ProjectsController::class, 'destroy'])->name('admin.project.delete');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

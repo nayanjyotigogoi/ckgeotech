@@ -3,16 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
-use App\Models\Project;
+
 class HomeController extends Controller
 {
-     public function index()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        // Fetch all active projects and products (modify filters if needed)
-        $projects = Project::latest()->get();
-        $products = Product::latest()->get();
+        $this->middleware('auth');
+    }
 
-        return view('index', compact('projects', 'products'));
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
     }
 }
