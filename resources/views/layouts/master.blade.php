@@ -5,11 +5,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="title" content="CK GEO TECH - River & Coastal Erosion Protection Experts">
+    <meta name="description"
+        content="CK GEO TECH specializes in Geo-textile solutions for riverbank and coastal erosion protection including Geo Tubes, Geo Bags, and Concrete Mattresses. Trusted since 2009.">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords"
+        content="CK GEO TECH, erosion protection, geo textile, geo tubes, geo bags, riverbank stabilization, concrete mattress, coastal engineering, BC Engineering and Consultancy">
+    <meta name="author" content="CK GEO TECH">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>CK GEO TECH</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <!-- Standard Icon -->
+    <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <!-- PNG Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+
+    <!-- Android & Chrome -->
+    <link rel="manifest" href="images/favicon_io/site.webmanifest">
+
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="images/favicon_io/safari-pinned-tab.svg" color="#0054a6">
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon_io/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -30,7 +64,7 @@
     <link href="{{asset('css/style-new.css')}}" rel="stylesheet">
 
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-     <link href="{{asset('css/know-more.css')}}" rel="stylesheet">
+    <link href="{{asset('css/know-more.css')}}" rel="stylesheet">
     @yield('css')
 
 </head>
@@ -197,7 +231,7 @@
                         <p>&copy; <a href="#">2025 CK GEO TECH</a>, All Right Reserved.</p>
                     </div>
                     <div class="col-md-6">
-                        <p>Developed By <a href="/">Nayanjyoti Gogoi</a></p>
+                        <p>Developed By <a href="https://www.anvayasolution.com">Anvaya Solution</a></p>
                     </div>
                 </div>
             </div>
@@ -228,149 +262,149 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/slick/slick.min.js"></script>
-     <script src="js/app.js"></script>
-     <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
 
     <!-- Template Javascript -->
     @yield('js')
 
     <script>
         (function ($) {
-    "use strict";
+            "use strict";
 
-    // Initiate the wowjs
-    new WOW().init();
-
-
-    // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
+            // Initiate the wowjs
+            new WOW().init();
 
 
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 90) {
-            $('.nav-bar').addClass('nav-sticky');
-            $('.carousel, .page-header').css("margin-top", "73px");
-        } else {
-            $('.nav-bar').removeClass('nav-sticky');
-            $('.carousel, .page-header').css("margin-top", "0");
-        }
-    });
+            // Back to top button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 200) {
+                    $('.back-to-top').fadeIn('slow');
+                } else {
+                    $('.back-to-top').fadeOut('slow');
+                }
+            });
+            $('.back-to-top').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+                return false;
+            });
 
 
-    // Dropdown on mouse hover
-    $(document).ready(function () {
-        function toggleNavbarMethod() {
-            if ($(window).width() > 992) {
-                $('.navbar .dropdown').on('mouseover', function () {
-                    $('.dropdown-toggle', this).trigger('click');
-                }).on('mouseout', function () {
-                    $('.dropdown-toggle', this).trigger('click').blur();
+            // Sticky Navbar
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 90) {
+                    $('.nav-bar').addClass('nav-sticky');
+                    $('.carousel, .page-header').css("margin-top", "73px");
+                } else {
+                    $('.nav-bar').removeClass('nav-sticky');
+                    $('.carousel, .page-header').css("margin-top", "0");
+                }
+            });
+
+
+            // Dropdown on mouse hover
+            $(document).ready(function () {
+                function toggleNavbarMethod() {
+                    if ($(window).width() > 992) {
+                        $('.navbar .dropdown').on('mouseover', function () {
+                            $('.dropdown-toggle', this).trigger('click');
+                        }).on('mouseout', function () {
+                            $('.dropdown-toggle', this).trigger('click').blur();
+                        });
+                    } else {
+                        $('.navbar .dropdown').off('mouseover').off('mouseout');
+                    }
+                }
+                toggleNavbarMethod();
+                $(window).resize(toggleNavbarMethod);
+            });
+
+
+            // jQuery counterUp
+            $('[data-toggle="counter-up"]').counterUp({
+                delay: 10,
+                time: 2000
+            });
+
+
+            // Modal Video
+            $(document).ready(function () {
+                var $videoSrc;
+                $('.btn-play').click(function () {
+                    $videoSrc = $(this).data("src");
                 });
-            } else {
-                $('.navbar .dropdown').off('mouseover').off('mouseout');
-            }
-        }
-        toggleNavbarMethod();
-        $(window).resize(toggleNavbarMethod);
-    });
+                console.log($videoSrc);
+
+                $('#videoModal').on('shown.bs.modal', function (e) {
+                    $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+                })
+
+                $('#videoModal').on('hide.bs.modal', function (e) {
+                    $("#video").attr('src', $videoSrc);
+                })
+            });
 
 
-    // jQuery counterUp
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
-    });
+            // Testimonial Slider
+            $('.testimonial-slider').slick({
+                infinite: true,
+                autoplay: true,
+                arrows: false,
+                dots: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                asNavFor: '.testimonial-slider-nav'
+            });
+            $('.testimonial-slider-nav').slick({
+                arrows: false,
+                dots: false,
+                focusOnSelect: true,
+                centerMode: true,
+                centerPadding: '22px',
+                slidesToShow: 3,
+                asNavFor: '.testimonial-slider'
+            });
+            $('.testimonial .slider-nav').css({ "position": "relative", "height": "160px" });
 
 
-    // Modal Video
-    $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
-
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
-
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
-    });
-
-
-    // Testimonial Slider
-    $('.testimonial-slider').slick({
-        infinite: true,
-        autoplay: true,
-        arrows: false,
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        asNavFor: '.testimonial-slider-nav'
-    });
-    $('.testimonial-slider-nav').slick({
-        arrows: false,
-        dots: false,
-        focusOnSelect: true,
-        centerMode: true,
-        centerPadding: '22px',
-        slidesToShow: 3,
-        asNavFor: '.testimonial-slider'
-    });
-    $('.testimonial .slider-nav').css({"position": "relative", "height": "160px"});
+            // Blogs carousel
+            $(".related-slider").owlCarousel({
+                autoplay: true,
+                dots: false,
+                loop: true,
+                nav: true,
+                navText: [
+                    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+                    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+                ],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    576: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    }
+                }
+            });
 
 
-    // Blogs carousel
-    $(".related-slider").owlCarousel({
-        autoplay: true,
-        dots: false,
-        loop: true,
-        nav : true,
-        navText : [
-            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-            '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-        ],
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            }
-        }
-    });
+            // Portfolio isotope and filter
+            var portfolioIsotope = $('.portfolio-container').isotope({
+                itemSelector: '.portfolio-item',
+                layoutMode: 'fitRows'
+            });
 
+            $('#portfolio-flters li').on('click', function () {
+                $("#portfolio-flters li").removeClass('filter-active');
+                $(this).addClass('filter-active');
 
-    // Portfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
+                portfolioIsotope.isotope({ filter: $(this).data('filter') });
+            });
 
-    $('#portfolio-flters li').on('click', function () {
-        $("#portfolio-flters li").removeClass('filter-active');
-        $(this).addClass('filter-active');
-
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
-    });
-
-})(jQuery);
+        })(jQuery);
 
 
     </script>

@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,11 @@ Route::get('/test', function () {
 Route::get('/userdashboard', function () {
     return view('users-Dashboard/dashboard');
 });
+
+
+//user registration
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [RegisterController::class, 'register']);
 
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
@@ -67,6 +73,8 @@ Route::post('admin/login', [AdminController::class, 'login'])->name('admin.login
 Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 
+
+
 // Admin dashboard route
 Route::get('/admin', [AdminDashboardController::class, 'index'])->name('admin.index');
 
@@ -91,7 +99,12 @@ Route::get('/projects/edit/{id}', [ProjectsController::class, 'edit'])->name('ad
 Route::post('/projects/update/{id}', [ProjectsController::class, 'update'])->name('admin.project.update');
 Route::delete('/projects/delete/{id}', [ProjectsController::class, 'destroy'])->name('admin.project.delete');
 
+//To upload the files for survey silchar
+// List of users who uploaded files for Silchar Survey Work
+Route::get('/admin/silchar/uploads', [UploadController::class, 'silcharUsers'])->name('admin.silchar.users');
 
+// View files uploaded by selected user
+Route::get('/admin/silchar/uploads/{user}', [UploadController::class, 'silcharUserFiles'])->name('admin.silchar.user.files');
 Route::post('/upload-files', [UploadController::class, 'storeUploads'])->name('upload-files');
 
 Auth::routes();

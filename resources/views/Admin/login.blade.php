@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,6 +114,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav>
         <div class="logo">Ck Geo Tech Admin</div>
@@ -122,7 +124,7 @@
     </nav>
 
     <div class="container">
-    <!-- @if ($errors->any())
+        <!-- @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -133,24 +135,30 @@
     @endif -->
 
         <h1>Log In</h1>
-        <p class="signup-text">You don't have a password? Please Contact Your Admin.</p>
+        
+        <p class="signup-text">
+            You don't have a password? Please Contact Your Admin. <br><br>
+            Or <a href="{{ route('register') }}">Create an Account</a>
+        </p>
+
 
         <form action="{{route('login')}}" method="post" class="login-form" id="loginForm">
             @csrf
             <div class="form-group">
                 <input type="email" name="email" id="email" placeholder="Email" required>
                 <!-- <div class="error" id="emailError">Please enter a valid email address</div> -->
-                 @error('email')
-                    <div class="invalid-feedback" style="color:red;" >{{ $message }}</div>
-                 @enderror
+                @error('email')
+                    <div class="invalid-feedback" style="color:red;">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <input type="password" name="password" id="password" placeholder="Password" required>
                 <!-- <div class="error" id="passwordError">Password must be at least 6 characters</div> -->
-                 <!-- @error('password')
+                <!-- @error('password')
                     <div class="invalid-feedback" style="color:red;" >{{ $message }}</div>
                  @enderror -->
             </div>
+
             <button type="submit" class="submit-btn">LOG IN</button>
         </form>
     </div>
@@ -189,4 +197,5 @@
         // });
     </script>
 </body>
+
 </html>

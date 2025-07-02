@@ -2,11 +2,34 @@
 namespace App\Http\Controllers;
 
 use App\Models\Upload;
+use App\Models\User;
+
 use Illuminate\Http\Request;
 use Str;
 
 class UploadController extends Controller
 {
+
+    public function silcharUsers()
+    {
+        // Fetch only users whose role is NOT 'admin'
+        $users = User::where('role', '!=', 'admin')->get();
+
+        return view('admin.silchar.users', compact('users'));
+    }
+
+    public function silcharUserFiles($userId)
+    {
+        // Get the user
+        $user = User::findOrFail($userId);
+
+        // Get the uploads for this user
+        $uploads = Upload::where('user_id', $userId)->latest()->get();
+
+        return view('admin.silchar.user_uploads', compact('user', 'uploads'));
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,17 +37,19 @@ class UploadController extends Controller
      */
     public function storeUploads(Request $request)
     {
-        $request->validate([
-            'type'        => 'required|in:video,image,document',
-            'title'       => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'file'        => 'required|file|mimes:mp4,mov,avi,jpeg,png,jpg,pdf,doc,docx|max:35750364',
-        ]);
         // dd($request->all());
+
+        $request->validate([
+            'type' => 'required|in:video,image,document',
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'file' => 'required|file|mimes:mp4,mov,avi,jpeg,png,jpg,pdf,doc,docx|max:40960', // 40MB
+        ]);
+        dd($request->all());
 
         try {
 
-            $file         = $request->file('file');
+            $file = $request->file('file');
             $originalName = $file->getClientOriginalName();
 
             // Reject filenames with double dots
@@ -33,28 +58,28 @@ class UploadController extends Controller
             }
 
             // Detect MIME type using finfo
-            $finfo    = new \finfo(FILEINFO_MIME_TYPE);
+            $finfo = new \finfo(FILEINFO_MIME_TYPE);
             $mimeType = $finfo->file($file);
 
             // Validate file types based on selected type
             $allowedTypes = [
-                'image'    => ['image/jpeg', 'image/png', 'image/jpg'],
-                'video'    => ['video/mp4', 'application/mp4'],
+                'image' => ['image/jpeg', 'image/png', 'image/jpg'],
+                'video' => ['video/mp4', 'application/mp4'],
                 'document' => ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
             ];
 
-            if (! in_array($mimeType, $allowedTypes[$request->type])) {
+            if (!in_array($mimeType, $allowedTypes[$request->type])) {
                 return back()->with('error', 'File type not allowed for ' . $request->type);
             }
 
             // Set storage path
-            $userId          = $request->user_id;
-            $extension       = $file->getClientOriginalExtension();
-            $fileName        = time() . '_' . Str::slug(pathinfo($originalName, PATHINFO_FILENAME)) . '.' . $extension;
+            $userId = $request->user_id;
+            $extension = $file->getClientOriginalExtension();
+            $fileName = time() . '_' . Str::slug(pathinfo($originalName, PATHINFO_FILENAME)) . '.' . $extension;
             $destinationPath = public_path("uploads/$userId");
 
             // Create directory if not exists
-            if (! file_exists($destinationPath)) {
+            if (!file_exists($destinationPath)) {
                 mkdir($destinationPath, 0775, true);
             }
 
@@ -64,11 +89,11 @@ class UploadController extends Controller
 
             // Save to DB
             Upload::create([
-                'user_id'       => $userId,
-                'type'          => $request->type,
-                'title'         => $request->title,
-                'description'   => $request->description,
-                'file_name'     => $fileName,
+                'user_id' => $userId,
+                'type' => $request->type,
+                'title' => $request->title,
+                'description' => $request->description,
+                'file_name' => $fileName,
             ]);
 
             return back()->with('success', 'File uploaded successfully!');

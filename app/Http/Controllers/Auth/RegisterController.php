@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -21,14 +23,14 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    // use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+    // protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -38,6 +40,29 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function showRegistrationForm()
+    {
+        return view('auth.register'); // Make sure this view exists
+    }
+
+     /**
+     * Handle registration request
+     */
+    public function register(Request $request)
+    {
+        // Validate input
+        $this->validator($request->all())->validate();
+
+        // Create user and fire registered event (optional)
+        event(new Registered($user = $this->create($request->all())));
+
+        // Do NOT auto-login the user
+        // Auth::login($user);
+
+        // Redirect to login with success message
+        return redirect()->route('login')->with('success', 'Account created! Please log in.');
     }
 
     /**
@@ -67,6 +92,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role' => 'user', // set default role
         ]);
     }
 }
