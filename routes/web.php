@@ -8,6 +8,8 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UploadController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,9 +53,11 @@ Route::get('/Contact-us', function () {
 });
 
 
-Route::get('/userdashboard', function () {
-    return view('users-Dashboard/dashboard');
-});
+// Route::get('/userdashboard', function () {
+//     return view('users-Dashboard/dashboard');
+// });
+
+Route::get('/userdashboard', [AdminController::class, 'userDashboard']);
 
 
 //admin login routes
@@ -86,6 +90,9 @@ Route::post('/projects/store', [ProjectsController::class, 'store'])->name('admi
 Route::get('/projects/edit/{id}', [ProjectsController::class, 'edit'])->name('admin.project.edit');
 Route::post('/projects/update/{id}', [ProjectsController::class, 'update'])->name('admin.project.update');
 Route::delete('/projects/delete/{id}', [ProjectsController::class, 'destroy'])->name('admin.project.delete');
+
+
+Route::post('/upload-files', [UploadController::class, 'storeUploads'])->name('upload-files');
 
 Auth::routes();
 
