@@ -20,7 +20,7 @@
     <title>CK GEO TECH</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  
+
     <!-- Favicon -->
     <link rel="icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
 
@@ -114,7 +114,7 @@
                                     </div>
                                     <div class="top-bar-text">
                                         <h3>Email Us</h3>
-                                        <p>info@ckgeotech.com</p>
+                                        <p>info@ckgeotech.in</p>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
                         </div>
 
                         <div class="ml-auto">
-                            <a class="btn" href="#">Get A Quote</a>
+                            <a class="btn" href="/admin/login">Login</a>
                         </div>
                     </div>
                 </nav>
@@ -170,7 +170,7 @@
                             <h2>Office Contact</h2>
                             <p><i class="fa fa-map-marker-alt"></i>Sualkuchi, Assam, India</p>
                             <p><i class="fa fa-phone-alt"></i>+91 9854979243</p>
-                            <p><i class="fa fa-envelope"></i>info@ckgeotech.com</p>
+                            <p><i class="fa fa-envelope"></i>info@ckgeotech.in</p>
                             <!-- <div class="footer-social">
                                 <a href=""><i class="fab fa-twitter"></i></a>
                                 <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -220,7 +220,7 @@
                 <div class="f-menu">
                     <a href="">Terms of use</a>
                     <a href="">Privacy policy</a>
-                    <a href="">Cookies</a>
+                    <!-- <a href="">Cookies</a> -->
                     <a href="">Help</a>
                     <a href="">FQAs</a>
                 </div>
@@ -250,6 +250,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

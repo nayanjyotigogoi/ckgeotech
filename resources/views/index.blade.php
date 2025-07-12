@@ -1,4 +1,23 @@
 @extends('layouts.master')
+@section('css')
+    <style>
+        .swal2-small-popup {
+            width: 300px !important;
+            font-size: 14px !important;
+            border-radius: 10px !important;
+        }
+
+        .swal2-small-title {
+            font-size: 16px !important;
+            color: #030f27 !important;
+        }
+
+        .swal2-small-text {
+            font-size: 14px !important;
+            color: #030f27 !important;
+        }
+    </style>
+@endsection
 @section('content')
     <div class="wrapper">
         <!-- Carousel Start -->
@@ -14,8 +33,7 @@
                     <div class="carousel-caption">
                         <p class="animated fadeInRight">Geo Bag Innovation</p>
                         <h1 class="animated fadeInLeft">For Smart Engineering for Smart Erosion Control</h1>
-                        <a class="btn animated fadeInUp" href="images/Concrete_Mattresses-1.jpg">Get
-                            A Quote</a>
+                        <a class="btn animated fadeInUp" href="{{ route('quote.form') }}">Get A Quote</a>
                     </div>
                 </div>
 
@@ -24,7 +42,7 @@
                     <div class="carousel-caption">
                         <p class="animated fadeInRight">Reliable Geo Bag Solutions</p>
                         <h1 class="animated fadeInLeft">Preserving Nature, Protecting Lives</h1>
-                        <a class="btn animated fadeInUp" href="images/carousel-1.jpg">Explore Services</a>
+                        <a class="btn animated fadeInUp" href="/Projects">Explore Products</a>
                     </div>
                 </div>
 
@@ -33,8 +51,7 @@
                     <div class="carousel-caption">
                         <p class="animated fadeInRight">We Are Trusted</p>
                         <h1 class="animated fadeInLeft">For Protecting Nature, Strengthening Foundations</h1>
-                        <a class="btn animated fadeInUp"
-                            href="https://htmlcodex.com/construction-company-website-template">Learn More</a>
+                        <a class="btn animated fadeInUp" href="/About">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -249,7 +266,7 @@
         </section>
         <!-- Service End -->
 
-         <!-- Portfolio Start -->
+        <!-- Portfolio Start -->
         <div class="portfolio">
             <div class="container">
                 <div class="section-header text-center">
@@ -322,6 +339,24 @@
         </div>
         <!-- Video End -->
 
+        <!-- Gallery Start -->
+        <section class="main-gallery-section">
+            <h2 class="main-gallery-title">Our Gallery</h2>
+            <p class="main-gallery-subtitle">Take a look at some of our recent work</p>
+
+            <div class="main-gallery-grid" id="galleryGrid">
+                @foreach($images as $image)
+                    <div class="main-gallery-item">
+                        <img src="{{ asset('uploads/gallery/' . $image->filename) }}" alt="{{ $image->title }}">
+                        <div class="main-gallery-caption">{{ $image->title }}</div>
+                    </div>
+                @endforeach
+            </div>
+
+            <button id="loadMoreBtn" class="main-gallery-button">Load More</button>
+        </section>
+        <!-- Gallery End -->
+
         <!-- FAQs Start -->
         <section class="faqs">
             <div class="container">
@@ -343,7 +378,8 @@
                                         CK GEO TECH specializes in civil engineering solutions, particularly in
                                         <span class="highlight-text">Geo-textile applications</span>
                                         for river and coastal erosion protection. We also
-                                        provide consultation and implementation of <span class="highlight-text">erosion control measures</span>.
+                                        provide consultation and implementation of <span class="highlight-text">erosion
+                                            control measures</span>.
                                     </div>
                                 </div>
                             </div>
@@ -369,7 +405,8 @@
                                 </div>
                                 <div id="collapseThree" class="collapse" data-parent="#accordion-1">
                                     <div class="card-body">
-                                        Geo-textiles act as <span class="highlight-text">a protective barrier</span> by reinforcing soil and preventing
+                                        Geo-textiles act as <span class="highlight-text">a protective barrier</span> by
+                                        reinforcing soil and preventing
                                         erosion caused by water currents, waves, or heavy rainfall. They enhance the
                                         stability of riverbanks and shorelines while allowing natural water flow.
                                     </div>
@@ -383,8 +420,10 @@
                                 </div>
                                 <div id="collapseFour" class="collapse" data-parent="#accordion-1">
                                     <div class="card-body">
-                                        Yes! We analyze each project's unique requirements and provide  <span class="highlight-text">tailor-made
-                                        solutions</span> using Geo-textiles, Geo-bags, Concrete Mattresses, and other advanced
+                                        Yes! We analyze each project's unique requirements and provide <span
+                                            class="highlight-text">tailor-made
+                                            solutions</span> using Geo-textiles, Geo-bags, Concrete Mattresses, and other
+                                        advanced
                                         erosion control technologies.
                                     </div>
                                 </div>
@@ -410,13 +449,15 @@
                             <div class="card wow fadeInRight" data-wow-delay="0.1s">
                                 <div class="card-header">
                                     <a class="card-link collapsed" data-toggle="collapse" href="#collapseSix">
-                                    Why choose CK GEO TECH?
+                                        Why choose CK GEO TECH?
                                     </a>
                                 </div>
                                 <div id="collapseSix" class="collapse" data-parent="#accordion-2">
                                     <div class="card-body">
-                                        With over  <span class="highlight-text">15 years of expertise</span>, we focus on providing high-quality,
-                                        sustainable, and cost-effective solutions. Our commitment to innovation and engineering excellence sets us apart in the field of erosion control.
+                                        With over <span class="highlight-text">15 years of expertise</span>, we focus on
+                                        providing high-quality,
+                                        sustainable, and cost-effective solutions. Our commitment to innovation and
+                                        engineering excellence sets us apart in the field of erosion control.
                                     </div>
                                 </div>
                             </div>
@@ -516,7 +557,7 @@
                                 <i class="flaticon-send-mail"></i>
                                 <div class="contact-text">
                                     <h2>Email</h2>
-                                    <p>info@ckgeotech.com</p>
+                                    <p>info@ckgeotech.in</p>
                                 </div>
                             </div>
                         </div>
@@ -524,24 +565,30 @@
                     <div class="col-md-6">
                         <div class="contact-form">
                             <div id="success"></div>
-                            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <form method="POST" action="{{ route('contact.send') }}">
+                                @csrf
+
+
                                 <div class="control-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
                                         required="required" data-validation-required-message="Please enter your name" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email"
-                                        required="required" data-validation-required-message="Please enter your email" />
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Your Email" required="required"
+                                        data-validation-required-message="Please enter your email" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                        required="required" data-validation-required-message="Please enter a subject" />
+                                    <input type="text" class="form-control" id="subject" name="subject"
+                                        placeholder="Subject" required="required"
+                                        data-validation-required-message="Please enter a subject" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <textarea class="form-control" id="message" placeholder="Message" required="required"
+                                    <textarea class="form-control" id="message" name="message" placeholder="Message"
+                                        required="required"
                                         data-validation-required-message="Please enter your message"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
@@ -549,6 +596,9 @@
                                     <button class="btn" type="submit" id="sendMessageButton">Send Message</button>
                                 </div>
                             </form>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -557,4 +607,29 @@
         <!-- Contact End -->
 
     </div>
+@endsection
+
+@section('js')
+    @if(session('success'))
+        <script>
+            window.addEventListener('DOMContentLoaded', function () {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: '{{ session('success') }}',
+                    background: '#fdbe33',
+                    color: '#030f27',
+                    timer: 2500,
+                    showConfirmButton: false,
+                    customClass: {
+                        popup: 'swal2-small-popup',
+                        title: 'swal2-small-title',
+                        content: 'swal2-small-text',
+                    }
+                });
+            });
+        </script>
+
+    @endif
+
 @endsection

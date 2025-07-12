@@ -4,7 +4,7 @@
             <th>Sl No</th>
             <th>Image</th>
             <th>Title</th>
-            <th>Category</th>
+            <!-- <th>Category</th> -->
             <th>Actions</th>
         </tr>
     </thead>
@@ -20,11 +20,12 @@
                     @endif
                 </td>
                 <td>{{ $image->title }}</td>
-                <td>{{ $image->category }}</td>
+                <!-- <td>{{ $image->category }}</td> -->
                 <td>
-                    <a href="{{ route('gallery.edit', $image->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="{{ route('admin.gallery.edit', $image->id) }}" class="btn btn-warning btn-sm">Edit</a>
 
-                    <form action="{{ route('gallery.destroy', $image->id) }}" method="POST" style="display:inline;">
+
+                    <form action="{{ route('admin.gallery.destroy', $image->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm"

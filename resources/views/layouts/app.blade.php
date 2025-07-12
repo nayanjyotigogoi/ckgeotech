@@ -10,6 +10,30 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <!-- Standard Icon -->
+    <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <!-- PNG Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+
+    <!-- Android & Chrome -->
+    <link rel="manifest" href="images/favicon_io/site.webmanifest">
+
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="images/favicon_io/safari-pinned-tab.svg" color="#0054a6">
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon_io/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">

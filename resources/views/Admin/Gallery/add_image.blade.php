@@ -16,7 +16,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.gallery.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
@@ -27,11 +27,6 @@
                 <div class="mb-3">
                     <label>Title</label>
                     <input type="text" name="title" class="form-control" required>
-                </div>
-
-                <div class="mb-3">
-                    <label>Category</label>
-                    <input type="text" name="category" class="form-control" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Upload</button>

@@ -5,7 +5,7 @@
     <main id="main" class="main">
         <section class="section">
             <h2>Gallery</h2>
-            <a href="{{ route('gallery.create') }}" class="btn btn-primary mb-3">Add Image</a>
+            <a href="{{ route('admin.gallery.create') }}" class="btn btn-primary mb-3">Add Image</a>
 
             @if(session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>

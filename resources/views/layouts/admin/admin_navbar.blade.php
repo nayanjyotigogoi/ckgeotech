@@ -9,6 +9,32 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+
+  <!-- Favicon -->
+    <link rel="icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <!-- Standard Icon -->
+    <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+
+    <!-- PNG Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+
+    <!-- Android & Chrome -->
+    <link rel="manifest" href="images/favicon_io/site.webmanifest">
+
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="images/favicon_io/safari-pinned-tab.svg" color="#0054a6">
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon_io/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
 </head>
 
 <body>
@@ -199,10 +225,33 @@
         </a>
       </li>
 
+      <!-- Gallery Section -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-toggle="collapse" href="#galleryMenu" role="button" aria-expanded="false"
+          aria-controls="galleryMenu">
+          <i class="bi bi-images"></i>
+          <span>Gallery</span>
+          <i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <div class="collapse" id="galleryMenu">
+          <ul class="nav flex-column ms-3">
 
+            {{-- Optional: Link to add gallery image --}}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('admin.gallery.create') }}">
+                <i class="bi bi-plus-circle"></i> Add Image
+              </a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('admin.gallery.index') }}">
+                <i class="bi bi-card-image"></i> View Gallery
+              </a>
+            </li>
 
-
+          </ul>
+        </div>
+      </li>
 
     </ul>
   </aside>

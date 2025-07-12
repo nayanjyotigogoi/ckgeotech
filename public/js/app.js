@@ -25,13 +25,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dom_utils_instanceOf_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom-utils/instanceOf.js */ "./node_modules/@popperjs/core/lib/dom-utils/instanceOf.js");
 
 
-
-
-
-
-
-
-
 var DEFAULT_OPTIONS = {
   placement: 'bottom',
   modifiers: [],

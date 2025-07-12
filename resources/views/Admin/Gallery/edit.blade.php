@@ -16,7 +16,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('gallery.update', $gallery->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.gallery.update', $gallery->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -38,12 +38,6 @@
                         <label>Title</label>
                         <input type="text" name="title" class="form-control"
                             value="{{ old('title', $gallery->title) }}">
-                    </div>
-
-                    <div class="mb-3">
-                        <label>Category</label>
-                        <input type="text" name="category" class="form-control"
-                            value="{{ old('category', $gallery->category) }}">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Update</button>
